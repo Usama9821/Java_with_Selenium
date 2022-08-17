@@ -22,10 +22,14 @@ public class First {
          
          //Scroll down the webpage by 5000 pixels  
          JavascriptExecutor js = (JavascriptExecutor)driver;  
-         js.executeScript("scrollBy(0, 2000)");   
+         js.executeScript("scrollBy(0, 200)");
+         
+         driver.findElement(By.className("r21Kzd")).click();
          
          // Click on the Search button  
-         driver.findElement(By.linkText("Core Java")).click();   
+         //driver.findElement(By.linkText("Core Java")).click();   
+         
+         driver.close(); 
 
 	}
 
