@@ -1,5 +1,6 @@
 import org.openqa.selenium.By;  
-import org.openqa.selenium.JavascriptExecutor;  
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;  
 import org.openqa.selenium.chrome.ChromeDriver;  
 
@@ -11,17 +12,20 @@ public class First {
 		
 		WebDriver driver=new ChromeDriver();  
 		
-		driver.navigate().to("http://www.javatpoint.com/");  
+		driver.navigate().to("https://www.google.com/");
         
         //Maximize the browser  
          driver.manage().window().maximize();  
          
-         //Scroll down the webpage by 5000 pixels  
-       JavascriptExecutor js = (JavascriptExecutor)driver;  
-       js.executeScript("scrollBy(0, 5000)");   
+         // Click on the search text box and send value 
+         driver.findElement(By.name("q")).sendKeys("Amazon",Keys.ENTER);
          
-        // Click on the Search button  
-       driver.findElement(By.linkText("Core Java")).click();   
+         //Scroll down the webpage by 5000 pixels  
+         JavascriptExecutor js = (JavascriptExecutor)driver;  
+         js.executeScript("scrollBy(0, 2000)");   
+         
+         // Click on the Search button  
+         driver.findElement(By.linkText("Core Java")).click();   
 
 	}
 
